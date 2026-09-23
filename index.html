@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Rose Pink — From Zero to Online Income ebook.">
+<title>Rose Pink | From Zero to Online Income</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#"><span>Rose</span> Pink</a>
+  <nav><a href="#book">The Book</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#buy" class="nav-buy">Buy now</a></nav>
+  <button class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+</header>
+
+<main>
+<section class="hero" id="book">
+  <div class="copy">
+    <p class="eyebrow">NEW EBOOK • DIGITAL DOWNLOAD</p>
+    <h1>From Zero to<br><em>Online Income</em></h1>
+    <p class="lead">A simple, practical guide for anyone who wants to understand how to start building income online — even if you're starting from zero.</p>
+    <div class="price"><span>GHS 30</span><small>one-time payment</small></div>
+    <div class="actions"><a class="btn primary" href="#buy">Get the ebook</a><a class="btn light" href="#details">See what's inside</a></div>
+    <p class="note">Instant digital product • Read on phone, tablet or computer</p>
+  </div>
+  <div class="visual">
+    <div class="halo"></div>
+    <div class="book">
+      <div class="book-top">ROSE PINK</div>
+      <div class="book-title">FROM ZERO<br>TO ONLINE<br>INCOME</div>
+      <div class="book-line"></div>
+      <div class="book-sub">A SIMPLE GUIDE TO<br>STARTING ONLINE</div>
+      <div class="book-bottom">DIGITAL EBOOK</div>
+    </div>
+  </div>
+</section>
+
+<section class="strip"><div><b>Simple</b><span>Easy-to-understand guidance</span></div><div><b>Practical</b><span>Ideas you can act on</span></div><div><b>Digital</b><span>Read wherever you are</span></div></section>
+
+<section class="details" id="details">
+  <div><p class="eyebrow">WHAT YOU'LL LEARN</p><h2>Start with a clear plan.</h2><p>Instead of feeling overwhelmed by everything online, this ebook breaks the journey into understandable steps so you can choose an idea, learn the basics and start taking action.</p></div>
+  <ul>
+    <li><b>01</b><span>Understand the online-income landscape</span></li>
+    <li><b>02</b><span>Explore beginner-friendly ways to earn online</span></li>
+    <li><b>03</b><span>Choose an approach that fits your skills</span></li>
+    <li><b>04</b><span>Turn your first idea into a simple action plan</span></li>
+    <li><b>05</b><span>Avoid common beginner mistakes</span></li>
+  </ul>
+</section>
+
+<section class="buy" id="buy">
+  <div class="buy-card">
+    <div class="mini-book"><strong>FROM ZERO<br>TO ONLINE<br>INCOME</strong><small>ROSE PINK</small></div>
+    <div class="buy-info">
+      <p class="eyebrow">YOUR COPY</p><h2>From Zero to Online Income</h2>
+      <p>Digital ebook • GHS 30</p>
+      <a id="payButton" class="btn primary full" href="#" target="_blank" rel="noopener">Buy securely — GHS 30</a>
+      <p class="tiny">You'll be sent to the secure payment page. After payment, deliver the PDF using your chosen payment/delivery setup.</p>
+    </div>
+  </div>
+  <p class="setup-warning" id="setupWarning">Payment link setup is required before this button can accept real payments.</p>
+</section>
+
+<section class="about" id="about">
+  <div class="avatar">RP</div><div><p class="eyebrow">ABOUT ROSE PINK</p><h2>Learn. Start. Grow.</h2><p>Rose Pink creates simple digital guides designed to make useful ideas easier to understand and put into practice.</p></div>
+</section>
+
+<section class="faq" id="faq">
+  <p class="eyebrow">FAQ</p><h2>Questions, answered.</h2>
+  <details open><summary>How much is the ebook?</summary><p>The launch price is <b>GHS 30</b>.</p></details>
+  <details><summary>What format is it?</summary><p>It is a digital ebook/PDF that can be read on a phone, tablet or computer.</p></details>
+  <details><summary>Do I need a laptop?</summary><p>No. You can buy and read a digital ebook from a phone or tablet.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Add your own refund policy here before publishing. Digital-product refund rules can vary, so make your policy clear to customers.</p></details>
+</section>
+
+<section class="contact"><p class="eyebrow">CONTACT</p><h2>Need help?</h2><p>Replace the email below with your store email before publishing.</p><a class="btn light" href="mailto:YOUR-EMAIL@example.com">Email Rose Pink</a></section>
+</main>
+
+<footer><div class="brand"><span>Rose</span> Pink</div><p>© <span id="year"></span> Rose Pink. All rights reserved.</p></footer>
+<script src="config.js"></script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const b=document.getElementById('payButton'), w=document.getElementById('setupWarning');
+if(window.PAYSTACK_PAYMENT_LINK && !window.PAYSTACK_PAYMENT_LINK.includes('YOUR_')){
+  b.href=window.PAYSTACK_PAYMENT_LINK; w.style.display='none';
+}else{
+  b.addEventListener('click',e=>{e.preventDefault();alert('Payment is not connected yet. Open config.js and paste your Paystack Payment Page link.');});
+}
+</script>
+</body>
+</html>
